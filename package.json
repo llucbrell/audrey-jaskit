@@ -1,0 +1,35 @@
+{
+  "name": "audrey-jaskit",
+  "version": "1.0.0",
+  "description": "audrey-two-seed for integration of jaskit node-module",
+  "main": "index.js",
+  "dependencies": {
+    "jaskit": "^1.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "audrey",
+    "audrey-two",
+    "command",
+    "line",
+    "interface",
+    "CLI",
+    "control",
+    "controller",
+    "view",
+    "view-control",
+    "ask",
+    "questions",
+    "interactive",
+    "file",
+    "write",
+    "color",
+    "style",
+    "stylish"
+  ],
+  "author": "Lucas_C/llucbrell",
+  "license": "MIT"
+}
