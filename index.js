@@ -52,11 +52,11 @@ var properties= Object.getOwnPropertyNames(terminal);
 function start(){
   checkProperties(name);
   checkColors(name);
-  var cli= jaskit('promt', terminal.colors[name]);
+  var cli= jaskit(terminal[name].prompt, terminal.colors[name]);
  
   cli.header('This is my question'); 
 
-terminal[name].forEach(function(element){
+terminal[name].data.forEach(function(element){
   
       cli.ask(element);
   
