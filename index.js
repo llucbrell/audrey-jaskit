@@ -54,19 +54,32 @@ function start(){
   checkColors(name);
   var cli= jaskit(terminal[name].prompt, terminal.colors[name]);
  
-  cli.header('This is my question'); 
+ if(terminal[name].header) cli.header(terminal[name].header); 
+ else cli.header('\n');
 
 terminal[name].data.forEach(function(element){
   
       cli.ask(element);
   
   });
-cli.end("end audey-jaskit");
-//console.log("end");
+if(terminal[name].to) cli.to("./mitexto.txt");
+
+if (terminal[name].format){
+  terminal[name].format.forEach(function(element){
+    var objtFormat= {};
+    if(element.before) objtFormat.before= element.before; 
+    if(element.after) objtFormat.after= element.after; 
+    if(element.replace) objtFormat.replace= element.replace; 
+    if(element.put) objtFormat.put= element.put; 
+    cli.change(element.question, objtFormat);
+
+
+  });
 }
 
+if(terminal[name].confirmation) cli.end(terminal[name].confirmation);
+else cli.end("are you sure you wanna write a file?");
 
-
-
+}
 
 }

@@ -31,5 +31,13 @@
     "stylish"
   ],
   "author": "Lucas_C/llucbrell",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llucbrell/audrey-jaskit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/llucbrell/audrey-jaskit/issues"
+  },
+  "homepage": "https://github.com/llucbrell/audrey-jaskit#readme"
 }

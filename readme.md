@@ -1,6 +1,6 @@
-# audrey-tables
+# audrey-jaskit
 
-> Seed for [audrey-two](https://www.npmjs.com/package/audrey-two) VCCLI (View-Control-->Command-Line-Interface) ^v2.0.0
+> Scion for [audrey-two](https://www.npmjs.com/package/audrey-two) VCCLI (View-Control-->Command-Line-Interface) ^v2.0.0
 
 
 ## What this scion does?
@@ -34,9 +34,17 @@ Write on your audrey-object-view an array of questions or strings that will be d
 
 Example
 ```js
+var arrayObject=["Does it have to be human?", "does it have to be mine?"];
+
 var myTerminalDisplay={
     body:["x?askSome"],//tell audrey where you want to display it
-    askSome: {prompt: "%" , data: object}, //assign questions to audrey-view
+    askSome: {header: "This is audrey-jaskit",
+              prompt: "$ " ,  // if you want to add a prompt sign or string before every question
+              data: arrayObject, //questions in one array
+              to: "myFile.txt", //the path of a destination file
+              confirmation:"Are everithing all rigth? \n y or n", //custom confirmation finally question
+              format: arrayOfFormatObjects //look at the format actions
+            }, //assign questions to audrey-view
     colors:{askSome: "green" // also chalkColors is supported}
 };
 
@@ -48,7 +56,28 @@ audrey.encore();//run audrey to display view
 ```
 You will see something like this
 
-![](https://raw.githubusercontent.com/llucbrell/audrey-tables/master/captura.png)
+![](https://raw.githubusercontent.com/llucbrell/audrey-jaskit/master/captura.png)
+
+## Format actions
+
+audrey-jaskit as jaskit module, give you the chance of preformat the answers before it'll be writted on the file. This could be usefull for making JSON files or other staff.
+
+Every answer is writted on a different line so you can add things, before the user text, after or replace things on the user text.
+
+Example
+
+```js
+var arrayOfFormatObjects=[{
+    question: 1, // number of question you want to format in stdrd array numeration
+    before: "{", //add something before user answer
+    after: " }", //"     "         after  "     "
+    replace: /fine/, //regular expresion to find and replace with
+    put: "Ok.." //the text inserted instead of regular expresion match
+}]
+```
+## Remember
+
+Use the x as first character of the taggy.
 
 ## License
 
