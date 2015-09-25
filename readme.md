@@ -13,7 +13,6 @@ Use it to ask in CLI and write the user's answers into a file. More or less, as 
 
 Audrey-two version 2.0.0 change the way of control your CLI-views. The tags. Now taggies replaced by custom audrey-seeds. This seeds can be included or not in your projects.
 
-This node-module redefine the older audrey-two taggy "#". Now you can use it again with audrey version 2.0.0
 
 ## Install
 
@@ -49,7 +48,7 @@ var myTerminalDisplay={
 };
 
 var audrey2= require('audrey-two');
-var audrey= audrey2(myTerminalDisplay);//pass the view to audrey
+var audrey= audrey2('nameOfView', myTerminalDisplay);//pass the view to audrey
 
 audrey.seed(["audrey-audrey-jaskit-x?"]);//tell audrey that there is a new seed
 audrey.encore();//run audrey to display view

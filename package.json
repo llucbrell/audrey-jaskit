@@ -1,6 +1,6 @@
 {
   "name": "audrey-jaskit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "audrey-two-seed for integration of jaskit node-module",
   "main": "index.js",
   "dependencies": {
